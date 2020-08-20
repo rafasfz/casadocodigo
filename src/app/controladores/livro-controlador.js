@@ -69,7 +69,7 @@ class LivroControlador {
                 )
             }
             livroDao.adiciona(req.body)
-                    .then(resp.redirect('/livros'))
+                    .then(resp.redirect(LivroControlador.rotas().lista))
                     .catch(erro => console.log(erro));
         }
     }
@@ -92,7 +92,7 @@ class LivroControlador {
             }
 
             livroDao.atualiza(req.body)
-                    .then(resp.redirect('/livros'))
+                    .then(resp.redirect(LivroControlador.rotas().lista))
                     .catch(erro => console.log(erro));
         }
     }
